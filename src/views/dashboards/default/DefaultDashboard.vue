@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // imported components
 import TotalEarning from './components/TotalEarning.vue';
-import TotalOrder from './components/TotalOrder.vue';
+import TotalUser from './components/TotalUser.vue';
+import TotalExercise from './components/TotalExercise.vue';
 import TotalIncome from './components/TotalIncome.vue';
 import TotalGrowth from './components/TotalGrowth.vue';
 import PopularStocks from './components/PopularStocks.vue';
@@ -13,13 +14,13 @@ import PopularStocks from './components/PopularStocks.vue';
     <!-- Total Earning -->
     <!-- -------------------------------------------------------------------- -->
     <v-col cols="12" md="4">
-      <TotalEarning />
+      <TotalUser />
     </v-col>
     <!-- -------------------------------------------------------------------- -->
     <!-- Total Order -->
     <!-- -------------------------------------------------------------------- -->
     <v-col cols="12" md="4">
-      <TotalOrder />
+      <TotalExercise />
     </v-col>
     <!-- -------------------------------------------------------------------- -->
     <!-- Total Income -->
@@ -31,15 +32,9 @@ import PopularStocks from './components/PopularStocks.vue';
     <!-- -------------------------------------------------------------------- -->
     <!-- Total Growth -->
     <!-- -------------------------------------------------------------------- -->
-    <v-col cols="12" lg="8">
+    <v-col cols="12" lg="12">
       <TotalGrowth />
     </v-col>
 
-    <!-- -------------------------------------------------------------------- -->
-    <!-- Popular Stocks -->
-    <!-- -------------------------------------------------------------------- -->
-    <v-col cols="12" lg="4">
-      <PopularStocks />
-    </v-col>
   </v-row>
 </template>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { ArrowDownLeftCircleIcon, ShoppingCartIcon, CircleArrowDownLeftIcon } from 'vue-tabler-icons';
+import { PlayBasketballIcon } from 'vue-tabler-icons';
 
 const tab = ref('1');
 
@@ -41,7 +42,7 @@ const chartOptions1 = computed(() => {
       },
       y: {
         title: {
-          formatter: () => 'Total Order'
+          formatter: () => '总计锻炼次数'
         }
       },
       marker: {
@@ -99,7 +100,7 @@ const chartOptions2 = computed(() => {
       },
       y: {
         title: {
-          formatter: () => 'Total Order'
+          formatter: () => '总计锻炼次数'
         }
       },
       marker: {
@@ -125,7 +126,7 @@ const lineChart2 = {
     <v-card-text>
       <div class="d-flex align-start mb-3">
         <v-btn icon rounded="sm" color="darkprimary" variant="flat">
-          <ShoppingCartIcon stroke-width="1.5" width="20" />
+          <PlayBasketballIcon stroke-width="1.5" width="20" />
         </v-btn>
         <div class="ml-auto z-1">
           <v-tabs v-model="tab" class="theme-tab" density="compact" align-tabs="end">
@@ -139,12 +140,12 @@ const lineChart2 = {
           <v-row>
             <v-col cols="6">
               <h2 class="text-h1 font-weight-medium">
-                $108
+                136
                 <a href="#">
                   <CircleArrowDownLeftIcon stroke-width="1.5" width="28" class="text-white" />
                 </a>
               </h2>
-              <span class="text-subtitle-1 text-medium-emphasis text-white">Total Order</span>
+              <span class="text-subtitle-1 text-medium-emphasis text-white">总计锻炼次数</span>
             </v-col>
             <v-col cols="6">
               <apexchart type="line" height="90" :options="chartOptions1" :series="lineChart1.series"> </apexchart>
@@ -155,12 +156,12 @@ const lineChart2 = {
           <v-row>
             <v-col cols="6">
               <h2 class="text-h1 font-weight-medium">
-                $961
+                136
                 <a href="#">
                   <ArrowDownLeftCircleIcon stroke-width="1.5" width="28" class="text-white" />
                 </a>
               </h2>
-              <span class="text-subtitle-1 text-medium-emphasis text-white">Total Order</span>
+              <span class="text-subtitle-1 text-medium-emphasis text-white">总计锻炼次数</span>
             </v-col>
             <v-col cols="6">
               <apexchart type="line" height="90" :options="chartOptions2" :series="lineChart2.series"> </apexchart>

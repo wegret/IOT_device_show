@@ -8,7 +8,8 @@ import {
   BugIcon,
   DashboardIcon,
   BrandChromeIcon,
-  HelpIcon
+  HelpIcon,
+  DevicesPinIcon
 } from 'vue-tabler-icons';
 
 export interface menu {
@@ -28,11 +29,16 @@ export interface menu {
 }
 
 const sidebarItem: menu[] = [
-  { header: 'Dashboard' },
+  { header: '仪表盘' },
   {
-    title: 'Default',
+    title: '数据统计',
     icon: DashboardIcon,
     to: '/dashboard/default'
+  },
+  {
+    title: '设备管理',
+    icon: DevicesPinIcon,
+    to: '/dashboard/devices'
   },
   { divider: true },
   { header: 'Pages' },
@@ -53,11 +59,13 @@ const sidebarItem: menu[] = [
       }
     ]
   },
+  /*
   {
     title: 'Error 404',
     icon: BugIcon,
     to: '/pages/error'
   },
+  
   { divider: true },
   { header: 'Utilities' },
   {
@@ -104,7 +112,7 @@ const sidebarItem: menu[] = [
     icon: HelpIcon,
     to: 'https://codedthemes.gitbook.io/berry-vuetify/',
     type: 'external'
-  }
+  }*/
 ];
 
 export default sidebarItem;

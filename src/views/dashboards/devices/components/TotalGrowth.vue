@@ -39,7 +39,7 @@ const chartOptions1 = computed(() => {
     },
     xaxis: {
       type: 'category',
-      categories: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug']
+      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     },
     legend: {
       show: true,
@@ -78,20 +78,20 @@ const chartOptions1 = computed(() => {
 const lineChart1 = {
   series: [
     {
-      name: '仰卧起坐',
-      data: [ 35, 20, 35, 45, 15, 75]
+      name: 'Investment',
+      data: [35, 125, 35, 35, 35, 80, 35, 20, 35, 45, 15, 75]
     },
     {
-      name: '引体向上',
-      data: [80, 25, 15, 85, 25, 75]
+      name: 'Loss',
+      data: [35, 15, 15, 35, 65, 40, 80, 25, 15, 85, 25, 75]
     },
     {
-      name: '自由运动',
-      data: [100, 10, 65, 45, 30, 10]
+      name: 'Profit',
+      data: [35, 145, 35, 35, 20, 105, 100, 10, 65, 45, 30, 10]
     },
     {
-      name: '斜伸引体',
-      data: [ 0, 200, 184, 0, 150, 0]
+      name: 'Maintenance',
+      data: [0, 0, 75, 0, 0, 115, 0, 0, 0, 0, 150, 0]
     }
   ]
 };
@@ -103,8 +103,8 @@ const lineChart1 = {
       <v-card-text>
         <v-row>
           <v-col cols="12" sm="9">
-            <span class="text-subtitle-2 text-disabled font-weight-bold">总计运动时长</span>
-            <h3 class="text-h3 mt-1">1,324.00 min</h3>
+            <span class="text-subtitle-2 text-disabled font-weight-bold">Total Growth</span>
+            <h3 class="text-h3 mt-1">$2,324.00</h3>
           </v-col>
           <v-col cols="12" sm="3">
             <v-select

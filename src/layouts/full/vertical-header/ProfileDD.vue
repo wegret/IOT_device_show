@@ -25,10 +25,12 @@ const authStore = useAuthStore();
     <v-divider></v-divider>
     <perfect-scrollbar style="height: calc(100vh - 300px); max-height: 515px">
       <div class="bg-lightwarning rounded-md pa-5 my-3 circle sm-circle lg-circle">
+        <!--
         <h4>Upgrade your plan</h4>
         <h6 class="text-subtitle-2 text-medium-emphasis mr-11 pr-11 mb-3 mt-2">70% discount for 1 years subscriptions.</h6>
         <v-btn color="warning" variant="flat" target="_" href="https://codedthemes.com/item/berry-vue-admin-dashboard/"> Go Premium </v-btn>
-      </div>
+        -->
+    </div>
 
       <v-divider></v-divider>
 
