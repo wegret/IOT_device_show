@@ -31,7 +31,7 @@ onMounted(() => {
     client.on('message', (topic, message) => {
         const topicParts = topic.split('/');
         const deviceName = topicParts[1];
-        const batteryLevel = parseInt(message.toString());
+        const batteryLevel = Math.floor(parseFloat(message.toString()));
         const updateTime = new Date();
 
         const deviceIndex = devices.value.findIndex(d => d.name === deviceName);
