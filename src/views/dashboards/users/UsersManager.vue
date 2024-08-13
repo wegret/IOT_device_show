@@ -27,7 +27,7 @@ const prepareScores = (scores) => {
 
 const messageOverList = ref(false);
 
-const users = ref([]);
+
 
 import { reactive } from 'vue';
 
@@ -36,6 +36,7 @@ const userDetails = reactive({});
 
 const loadingDetails = ref({});
 
+const users = ref([]);
 const fetchUsers = async () => {
     try {
         const response = await axios.get('http://113.45.173.169:5000/get_user_list');
@@ -82,7 +83,7 @@ const scoreColor = (score) => {
         <v-expansion-panels>
             <v-expansion-panel v-for="user in users" :key="user">
                 <v-expansion-panel-title>
-                    {{ user }}
+                    用户ID： {{ user }}
                 </v-expansion-panel-title>
                 <v-expansion-panel-text>
                     <v-row>

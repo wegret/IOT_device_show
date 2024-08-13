@@ -8,6 +8,20 @@ const items = shallowRef([
   { title: 'Export', icon: FileExportIcon },
   { title: 'Archive File', icon: ArchiveIcon }
 ]);
+
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+const users = ref([]);
+
+
+const fetchUsers = async () => {
+    try {
+        const response = await axios.get('http://113.45.173.169:5000/get_user_list');
+        users.value = JSON.parse(response.data);
+    } catch (error) {
+        console.error('Failed to fetch users:', error);
+    }
+};
 </script>
 
 <template>
@@ -38,7 +52,7 @@ const items = shallowRef([
         </div>
       </div>
       <h2 class="text-h1 font-weight-medium">
-        13 <a href="#"><CircleArrowUpRightIcon stroke-width="1.5" width="28" class="text-white" /> </a>
+        6 <a href="#"><CircleArrowUpRightIcon stroke-width="1.5" width="28" class="text-white" /> </a>
       </h2>
       <span class="text-subtitle-1 text-medium-emphasis text-white">总计用户量</span>
     </v-card-text>

@@ -5,6 +5,18 @@ import mqtt from 'mqtt';
 let client = null;
 const isConnected = ref(false);
 
+const commands = ref([
+    { topic: 'sport_cmd', message: 'start' },
+    { topic: 'sport_cmd', message: 'stop' },
+    { topic: 'sport_cmd', message: 'chin-up' }
+]);
+
+function publishCommand(cmd) {
+    console.error(cmd);
+    client.publish(cmd.topic, cmd.message);
+}
+
+
 let sport_active = false;
 
 function sport_end() {
@@ -23,7 +35,7 @@ function connectMQTT() {
         console.log(`Message received on ${topic}: ${msgContent}`);
 
         if (msgContent === "waiting") {
-            
+
         } else if (msgContent === "stop") {
             sport_active = false;
         } else {
@@ -74,30 +86,16 @@ onUnmounted(() => {
                         </template>
                     </v-switch>
                 </v-row>
-                <v-row>
-                    <v-btn variant="outlined" @click="handleClick">
-                        {{ isConnected ? 'Disconnect' : 'Connect' }}
-                    </v-btn>
-                </v-row>
             </v-card-text>
-            <v-car-text>
-                <v-row v-if="isConnected">
-                    <v-btn variant="outlined" @click="sport_end">
-                        sport_cmd: stop
-                    </v-btn>
-                </v-row>
-            </v-car-text>
-        </v-card>
-    </v-card>
-    <v-card elevation="0">
-        <v-card variant="outlined">
-            <v-car-text>
-                <v-row v-if="isConnected">
-                    <v-btn @click="sport_end">
-                        sport_cmd: stop
-                    </v-btn>
-                </v-row>
-            </v-car-text>
+            <div v-if="isConnected">
+                <v-card-text v-for="cmd in commands">
+                    <v-row>
+                        <v-btn variant="outlined" @click="publishCommand(cmd)">
+                            {{ cmd.topic }} : {{ cmd.message }}
+                        </v-btn>
+                    </v-row>
+                </v-card-text>
+            </div>
         </v-card>
     </v-card>
 </template>
