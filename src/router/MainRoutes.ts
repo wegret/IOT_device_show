@@ -1,3 +1,5 @@
+import path from 'path';
+
 const MainRoutes = {
     path: '/main',
     meta: {
@@ -20,6 +22,16 @@ const MainRoutes = {
             name: 'Devices',
             path: '/dashboard/devices',
             component: () => import('@/views/dashboards/devices/DevicesWatcher.vue')
+        },
+        {
+            name: 'Users',
+            path: '/dashboard/users',
+            component: () => import('@/views/dashboards/users/UsersManager.vue')
+        },
+        {
+            name: 'MQTT',
+            path: '/dashboard/mqtt',
+            component: () => import('@/views/dashboards/mqtt/mqtt.vue')
         },
         {
             name: 'Starter',
