@@ -29,6 +29,7 @@
     "mqtt": "^5.9.1",
     "pinia": "2.1.7",
     "remixicon": "4.2.0",
+    "text-encoding": "^0.7.0",
     "vee-validate": "4.12.8",
     "vite-plugin-vuetify": "2.0.3",
     "vue": "3.4.27",

@@ -47,6 +47,14 @@ const fetchUsers = async () => {
     } catch (error) {
         console.error('Failed to fetch users:', error);
     }
+    const response = await axios.get('https://fc-mp-158be243-d1a9-49f1-96f9-979e26e97065.next.bspapp.com/getUserDetail');
+    let parsedData = response.data;
+
+    parsedData.data.forEach(user => {
+        console.log("User ID:", user._id);
+        console.log("Username:", user.username);
+    // 输出其他你需要的字段
+    });
 };
 
 const fetchUserScore = async (userId) => {

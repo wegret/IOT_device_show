@@ -9,9 +9,12 @@ const correctOTP = '654321';
 const isOTPValid = ref(false);
 
 const commands = ref([
-    { topic: 'sport_cmd', message: 'start' },
-    { topic: 'sport_cmd', message: 'stop' },
-    { topic: 'sport_cmd', message: 'chin-up' },
+    { topic: 'sport_cmd', message: 'stop' , rt: false},
+    { topic: 'sport_cmd', message: 'chin-up', rt: false },
+    { topic: 'sport_cmd', message: 'xie', rt: false },
+    { topic: 'sport_cmd', message: 'sit-up', rt: false },
+    { topic: 'state', message: 'isbooked', rt: true},
+    { topic: 'state', message: 'idle', rt: true}
 ]);
 
 const receivedMessages = ref([]);
@@ -27,8 +30,7 @@ function verifyOTP() {
 }
 
 function publishCommand(cmd) {
-    console.error(cmd);
-    client.publish(cmd.topic, cmd.message);
+    client.publish(cmd.topic, cmd.message, cmd.rt);
 }
 
 let sport_active = false;
